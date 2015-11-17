@@ -24,7 +24,6 @@ common() {
     letsencrypt_test \
         --authenticator standalone \
         --installer null \
-        --register-unsafely-without-email \
         "$@"
 }
 
