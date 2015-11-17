@@ -104,7 +104,7 @@ class NcursesDisplay(object):
 
             return code, int(tag) - 1
 
-    def input(self, message):
+    def input(self, message, **kwargs):
         """Display an input box to the user.
 
         :param str message: Message to display that asks for input.
@@ -114,7 +114,7 @@ class NcursesDisplay(object):
             `string` - input entered by the user
 
         """
-        return self.dialog.inputbox(message, width=self.width)
+        return self.dialog.inputbox(message, width=self.width, **kwargs)
 
     def yesno(self, message, yes_label="Yes", no_label="No"):
         """Display a Yes/No dialog box.

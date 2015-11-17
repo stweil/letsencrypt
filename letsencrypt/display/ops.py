@@ -127,13 +127,16 @@ def get_email(more=False, invalid=False):
 
     """
     msg = "Enter email address (used for urgent notices and lost key recovery)"
+    height = 8
     if invalid:
         msg = "There seem to be problems with that address. " + msg
+        height += 1
     if more:
         msg += ('\n\nIf you really want to skip this, you can run the client with '
                 '--register-unsafely-without-email but make sure you backup your '
-                'account key from /etc/letsencrypt/accounts\n\n')
-    code, email = zope.component.getUtility(interfaces.IDisplay).input(msg)
+                'account key from /etc/letsencrypt/accounts.')
+        height += 4
+    code, email = zope.component.getUtility(interfaces.IDisplay).input(msg, height=height)
 
     if code == display_util.OK:
         if le_util.safe_email(email):
