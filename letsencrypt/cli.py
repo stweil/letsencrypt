@@ -141,6 +141,8 @@ def _determine_account(args, config):
         else:  # no account registered yet
             if args.email is None and not args.register_unsafely_without_email:
                 args.email = display_ops.get_email()
+            if not args.email:     # may be "" in integration tests?
+                args.email = None
 
             def _tos_cb(regr):
                 if args.tos:
