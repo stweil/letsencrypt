@@ -8,7 +8,7 @@ ENV APACHE_RUN_USER=daemon \
     APACHE_PID_FILE=/usr/local/apache2/logs/httpd.pid \
     APACHE_RUN_DIR=/var/run/apache2 \
     APACHE_LOCK_DIR=/var/lock \
-    APACHE_LOG_DIR=/usr/local/apache2/logs 
+    APACHE_LOG_DIR=/usr/local/apache2/logs
 
 COPY letsencrypt-compatibility-test/letsencrypt_compatibility_test/configurators/apache/a2enmod.sh /usr/local/bin/
 COPY letsencrypt-compatibility-test/letsencrypt_compatibility_test/configurators/apache/a2dismod.sh /usr/local/bin/
